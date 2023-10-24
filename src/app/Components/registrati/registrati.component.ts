@@ -19,4 +19,16 @@ export class RegistratiComponent {
     numeroTelefono: new FormControl(''),
     anniPatente: new FormControl(''),
   })
+
+  registrati(){
+    this.tmp = new Utente(
+      this.utenteForm.get(['nome']).value,
+      this.utenteForm.get(['cognome']).value,
+      this.utenteForm.get(['codiceFiscale']).value,
+      this.utenteForm.get(['email']).value,
+      this.utenteForm.get(['password']).value,
+      this.utenteForm.get(['numeroTelefono']).value,
+      this.utenteForm.get(['anniPatente']).value,
+    )
+  }
 }
