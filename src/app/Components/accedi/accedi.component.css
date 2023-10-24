@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    margin: 0;
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
