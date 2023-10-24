@@ -8,6 +8,9 @@ import { HomeComponent } from './Components/home/home.component';
 import { AccediComponent } from './Components/accedi/accedi.component';
 import { RegistratiComponent } from './Components/registrati/registrati.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CatalogoComponent } from './Components/catalogo/catalogo.component';
+import { FaqsComponent } from './Components/faqs/faqs.component';
+import { ContattiComponent } from './Components/contatti/contatti.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     AccediComponent,
     RegistratiComponent,
+    CatalogoComponent,
+    FaqsComponent,
+    ContattiComponent,
   ],
   imports: [
     BrowserModule,
