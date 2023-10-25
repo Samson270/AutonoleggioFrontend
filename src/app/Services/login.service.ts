@@ -13,6 +13,7 @@ export class LoginService {
   private loggatoSubject = new BehaviorSubject<boolean>(false);
   loggato$ = this.loggatoSubject.asObservable();
   nome: string;
+  isAdmin: boolean;
 
   private baseUrl='http://localhost:8080/user/login'
 
@@ -22,8 +23,9 @@ export class LoginService {
     return this.httpClient.post(this.baseUrl, credentials, { withCredentials: true });
   }
 
- setLoggato(nome: string) {
+ setLoggato(nome: string, isAdmin: boolean) {
     this.nome = nome;
+    this.isAdmin = isAdmin;
     this.loggatoSubject.next(true);
   }
 

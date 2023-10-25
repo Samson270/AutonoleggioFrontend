@@ -18,8 +18,12 @@
         <a routerLink="accedi" type="button" class="btn btn-outline-light me-2">Accedi</a>
         <a routerLink="registrati" type="button" class="btn btn-warning">Registrati</a>
       </div>
-      <div class="text-end" *ngIf="loggato">
+      <div class="text-end" *ngIf="loggato && !isAdmin">
         <p><b>Benvenuto {{nome}}</b>&nbsp;<button class="btn btn-warning" (click)="logout()">Logout</button></p>
+      </div>
+      <div class="text-end" *ngIf="loggato && isAdmin">
+        <p><b>Benvenuto Admin {{nome}}</b>&nbsp;
+        <button class="btn btn-warning" (click)="logout()">Logout</button></p>
       </div>
 
     </div>

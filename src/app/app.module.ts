@@ -12,6 +12,8 @@ import { FaqsComponent } from './Components/faqs/faqs.component';
 import { ContattiComponent } from './Components/contatti/contatti.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { ContatoreComponent } from './Components/contatore/contatore.component';
+import { CommonModule, DatePipe } from '@angular/common';
+import { AdminPageComponent } from './Components/admin-page/admin-page.component';
 
 @NgModule({
   declarations: [
@@ -23,15 +25,17 @@ import { ContatoreComponent } from './Components/contatore/contatore.component';
     FaqsComponent,
     ContattiComponent,
     FooterComponent,
-    ContatoreComponent
+    ContatoreComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    CommonModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

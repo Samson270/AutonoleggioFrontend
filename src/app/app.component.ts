@@ -11,6 +11,7 @@ import { LoginService } from './Services/login.service';
 export class AppComponent {
 
   loggato: boolean;
+  isAdmin: boolean;
   nome: string;
 
   ngOnInit(){
@@ -18,8 +19,10 @@ export class AppComponent {
       this.loggato = loggato;
       if (loggato) {
         this.nome = this.loginService.nome;
+        this.isAdmin = this.loginService.isAdmin;
       } else {
         this.nome = null;
+        this.isAdmin = false;
       }
     });
   }
