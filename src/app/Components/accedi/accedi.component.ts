@@ -1,10 +1,9 @@
 import { FormGroup, FormControl } from '@angular/forms';
 import { Credentials } from './../../Models/Credentials';
 import { Component } from '@angular/core';
-import { AppService } from 'src/app/Services/app.service';
+import { LoginService } from 'src/app/Services/login.service';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-
 
 @Component({
   selector: 'app-accedi',
@@ -15,22 +14,29 @@ export class AccediComponent {
 
     credentials: Credentials;
 
-    constructor(private app: AppService, private http: HttpClient, private router: Router){}
+    constructor( private router: Router, private loginService: LoginService, private http: HttpClient){}
 
     credentialsForm = new FormGroup({
-    email: new FormControl(''),
+    username: new FormControl(''),
     password: new FormControl(''),
   })
 
   login(){
     this.credentials = new Credentials(
-      this.credentialsForm.get('email').value,
+      this.credentialsForm.get('username').value,
       this.credentialsForm.get('password').value,
     );
-    this.app.authenticate(this.credentials, () => {
-      this.router.navigateByUrl('/');
+    console.log(this.credentials);
+    this.loginService.loginUser(this.credentials).subscribe((res: any) =>{
+      console.log(res);
+      if(res.message == "Email Not Exist"){
+        alert("Email Not Exist");
+      }else if(res.message == "Login Succes"){
+        this.loginService.setLoggato(res.name);
+        this.router.navigateByUrl("/home");
+      }else{
+        alert("Incorrect email and password not match");
+      }
     });
-     return false;
-
   }
 }

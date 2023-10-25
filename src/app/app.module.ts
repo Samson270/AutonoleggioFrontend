@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
-import { AppService } from './Services/app.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
 import { AccediComponent } from './Components/accedi/accedi.component';
@@ -11,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CatalogoComponent } from './Components/catalogo/catalogo.component';
 import { FaqsComponent } from './Components/faqs/faqs.component';
 import { ContattiComponent } from './Components/contatti/contatti.component';
+import { FooterComponent } from './Components/footer/footer.component';
+import { ContatoreComponent } from './Components/contatore/contatore.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { ContattiComponent } from './Components/contatti/contatti.component';
     CatalogoComponent,
     FaqsComponent,
     ContattiComponent,
+    FooterComponent,
+    ContatoreComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { ContattiComponent } from './Components/contatti/contatti.component';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [AppService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

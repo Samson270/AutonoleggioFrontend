@@ -1,1 +1,16 @@
-<p>PAGINA PRINCIPALE</p>
+<div class="px-4 py-5 my-3 text-center border-bottom">
+    <h1 class="display-5 fw-bold text-body-emphasis">Home</h1>
+    <div class="col-lg-6 mx-auto">
+        <form class="d-flex gap-4">
+            <label for="dataPartenza"><b>Data di ritiro:</b></label>
+            <input type="datetime-local" id="dataPartenza" name="dataPartenza">
+            <label for="dataRitorno"><b>Data di riconsegna:</b></label>
+            <input type="datetime-local" id="dataRitorno" name="dataRitorno">
+            <input type="submit" value="Invia">
+        </form>
+    </div>
+    <div class="container d-flex justify-content-around bg-body">
+        <app-contatore titolo="Clienti" [targetCount]="900"></app-contatore>
+        <app-contatore titolo="Sponsor" [targetCount]="300"></app-contatore>
+    </div>
+</div>
