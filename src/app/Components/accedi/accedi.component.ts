@@ -32,8 +32,13 @@ export class AccediComponent {
       if(res.message == "Email Not Exist"){
         alert("Email Not Exist");
       }else if(res.message == "Login Succes"){
-        this.loginService.setLoggato(res.name);
-        this.router.navigateByUrl("/home");
+        if(this.credentials.username == "admin@gmail.com" && this.credentials.password == "Password123"){
+          this.loginService.setLoggato(res.name, true);
+        this.router.navigateByUrl("/admin-page");
+        } else {
+            this.loginService.setLoggato(res.name, false);
+            this.router.navigateByUrl("/home");
+        }
       }else{
         alert("Incorrect email and password not match");
       }
