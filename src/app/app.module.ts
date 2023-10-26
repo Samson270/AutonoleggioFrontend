@@ -15,6 +15,7 @@ import { ContatoreComponent } from './Components/contatore/contatore.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { AdminPageComponent } from './Components/admin-page/admin-page.component';
 import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/aggiungi-macchina.component';
+import { OrdiniComponent } from './AdminComponents/ordini/ordini.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/a
     FooterComponent,
     ContatoreComponent,
     AdminPageComponent,
-    AggiungiMacchinaComponent
+    AggiungiMacchinaComponent,
+    OrdiniComponent
   ],
   imports: [
     BrowserModule,
