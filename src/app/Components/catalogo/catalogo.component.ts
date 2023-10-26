@@ -22,4 +22,5 @@ export class CatalogoComponent {
     this.prezzo = "195.000";
     this.potenza = "640";
   }
+
 }

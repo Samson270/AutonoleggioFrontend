@@ -34,11 +34,18 @@ export class AggiungiMacchinaComponent {
       this.autoForm.get('marca').value,
       this.autoForm.get('prezzoGiornaliero').value,
       this.autoForm.get('potenza').value,
-      "../../../assets/" + this.autoForm.get('').value,
+      "/src/assets/" + this.autoForm.get('imageTitle').value + ".jpg",
       this.autoForm.get('descrizione').value,
     );
-    this.addCarService.addCar(this.tmp);
-
+    this.addCarService.addCar(this.tmp).subscribe((res: string) =>{
+      if(res == this.tmp.targa){
+        console.log(this.tmp);
+        this.router.navigateByUrl("/admin-page")
+      } else{
+        alert("Errore durante l'inserimento");
+      }
+    });
+    
     //console.log("./src/assets/" + this.autoForm.get(['imageTitle']).value);
   }
 }
