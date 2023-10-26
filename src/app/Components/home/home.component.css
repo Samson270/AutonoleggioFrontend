@@ -18,7 +18,7 @@ button {
     font-size: 16px;
 }
 body{
-    background-image: url('b.jpg');
+    background-image: url('/assets/b.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -26,6 +26,7 @@ body{
     background-color: whitesmoke;
 }
 h1{
+    color: darkgoldenrod;
     font-family: 'Amsterdam Two';
     text-shadow:
     2px 2px 4px #000000,

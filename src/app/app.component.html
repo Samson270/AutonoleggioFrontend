@@ -17,7 +17,7 @@
         </ul>
         <div class="text-end" *ngIf="!loggato">
           <a routerLink="accedi" type="button" class="btn btn-outline-light me-2">Accedi</a>
-          <a routerLink="registrati" type="button" class="btn btn-warning">Registrati</a>
+          <a routerLink="registrati" type="button" class="btn btn-warning" style="background-color: goldenrod;">Registrati</a>
         </div>      
         <div class="text-end" *ngIf="loggato && !isAdmin">
           <p><b>Benvenuto {{nome}}</b>&nbsp;<button class="btn btn-warning" (click)="logout()">Logout</button></p>

@@ -2,3 +2,27 @@ a {
     text-decoration: none;
     color: #c5a643;
 }
+h1{
+    color: darkgoldenrod;
+    font-family: 'Amsterdam Two';
+    text-shadow:
+    2px 2px 4px #000000,
+    0 0 1em #000000,
+    0 0 0.2em #000000;
+}
+body{
+    background-image: url('/assets/g.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+}
+.descrizione{
+    color:#d9d9d9;
+    font-weight: bolder;
+    text-shadow:
+    2px 2px 4px #2c424d,
+    0 0 1em #2c424d,
+    0 0 0.2em #2c424d;
+}

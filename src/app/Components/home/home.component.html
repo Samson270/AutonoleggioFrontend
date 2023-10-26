@@ -1,29 +1,29 @@
 <body>
-<div class="px-4 py-5 my-3 text-center border-bottom">
-    <h1 class="display-5 fw-bold" style="color: darkgoldenrod;">Home</h1>
-    <div class="col-lg-6 mx-auto">
-            <form onsubmit="return controllaData()" method="post" class="d-flex gap-4">
-                <label for="dataRitiro"><b>Data di ritiro:</b></label>
-                <input type="datetime-local" id="dataRitiro" name="dataPartenza" [min]="dataOggi" [value]="dataOggi" required>
-                <label for="dataRiconsegna"><b>Data di riconsegna:</b></label>
-                <input type="datetime-local" id="dataRiconsegna" [min]="dataMinimaRiconsegna" name="dataRitorno" required>
-            </form>
-            <br>
-            <div id="errore" style="color: black; display: none;">Non si noleggiano DeLorean DMC-12.</div>
-            <a href='/catalogo'><button>Continua</button></a>
+    <div class="px-4 py-5 text-center border-bottom">
+        <h1 class="display-5 fw-bold">Home</h1>
+        <div class="col-lg-6 mx-auto">
+                <form onsubmit="return controllaData()" method="post" class="d-flex gap-4">
+                    <label for="dataRitiro"><b>Data di ritiro:</b></label>
+                    <input type="datetime-local" id="dataRitiro" name="dataPartenza" [min]="dataOggi" [value]="dataOggi" required>
+                    <label for="dataRiconsegna"><b>Data di riconsegna:</b></label>
+                    <input type="datetime-local" id="dataRiconsegna" [min]="dataMinimaRiconsegna" name="dataRitorno" required>
+                </form>
+                <br>
+                <div id="errore" style="color: black; display: none;">Non si noleggiano DeLorean DMC-12.</div>
+                <a href='/catalogo'><button>Continua</button></a>
+        </div>
     </div>
-</div>
-</body>
-<br><br>
-<div class="px-4 py-5 my-3 text-center border-bottom" style="text-align: center;">
-    <p class="display-4 fw-bold" style="text-align: left;">Scopri l'arte di viaggiare con stile a <span class="desk"><b><i>Palermo!</i></b></span></p>
-    <p class="lead mb-4 text-lead" style="text-align: left;">Hai mai sognato di esplorare le strade pittoresche di Palermo a bordo di un'auto di lusso? Ora il tuo sogno può diventare realtà!</p>
-    <p class="lead mb-4 text-lead" style="text-align: left;">Unisciti a noi e immergiti nell'esperienza di noleggiare auto di lusso a Palermo, dove il lusso incontra la bellezza mozzafiato dell'isola. Con un'ampia gamma di auto di lusso a disposizione, puoi guidare con eleganza e comfort mentre scopri la cultura, la storia e i paesaggi unici di Palermo.</p>
-    <p class="lead mb-4 text-lead" style="text-align: left;">Che tu stia pianificando una fuga romantica, un viaggio di lusso o semplicemente desideri esplorare questa affascinante città in grande stile, siamo qui per rendere il tuo soggiorno indimenticabile. Noleggia una delle nostre auto di lusso e assapora la dolce vita siciliana come mai prima d'ora. Con servizi personalizzati, assistenza 24/7 e veicoli impeccabili, ti garantiamo un'esperienza di noleggio senza precedenti.</p>
-    <p class="lead mb-4 text-lead"style="text-align: left;">Prendi il volante e fai un viaggio indimenticabile attraverso i tesori nascosti di Palermo. Prenota ora e vivi l'esperienza di noleggiare un'auto di lusso a Palermo che rimarrà nel tuo cuore per sempre. Riscopri la bellezza e la grandezza di questa città affascinante.</p>
-    <p class="lead mb-4 text-lead" style="text-align: left;"><span class="desk"><b><i>Sei pronto per l'avventura?</i></b></span></p>
-</div>
-    <div class="container d-flex justify-content-around bg-body">
-        <app-contatore titolo="Clienti" [targetCount]="900"></app-contatore>
-        <app-contatore titolo="Sponsor" [targetCount]="300"></app-contatore>
+    </body>
+    <br><br>
+    <div class="px-4 py-5 my-3 text-center border-bottom" style="text-align: center;">
+        <p class="display-4 fw-bold" style="text-align: left;">Scopri l'arte di viaggiare con stile a <span class="desk"><b><i>Palermo!</i></b></span></p>
+        <p class="lead mb-4 text-lead" style="text-align: left;">Hai mai sognato di esplorare le strade pittoresche di Palermo a bordo di un'auto di lusso? Ora il tuo sogno può diventare realtà!</p>
+        <p class="lead mb-4 text-lead" style="text-align: left;">Unisciti a noi e immergiti nell'esperienza di noleggiare auto di lusso a Palermo, dove il lusso incontra la bellezza mozzafiato dell'isola. Con un'ampia gamma di auto di lusso a disposizione, puoi guidare con eleganza e comfort mentre scopri la cultura, la storia e i paesaggi unici di Palermo.</p>
+        <p class="lead mb-4 text-lead" style="text-align: left;">Che tu stia pianificando una fuga romantica, un viaggio di lusso o semplicemente desideri esplorare questa affascinante città in grande stile, siamo qui per rendere il tuo soggiorno indimenticabile. Noleggia una delle nostre auto di lusso e assapora la dolce vita siciliana come mai prima d'ora. Con servizi personalizzati, assistenza 24/7 e veicoli impeccabili, ti garantiamo un'esperienza di noleggio senza precedenti.</p>
+        <p class="lead mb-4 text-lead"style="text-align: left;">Prendi il volante e fai un viaggio indimenticabile attraverso i tesori nascosti di Palermo. Prenota ora e vivi l'esperienza di noleggiare un'auto di lusso a Palermo che rimarrà nel tuo cuore per sempre. Riscopri la bellezza e la grandezza di questa città affascinante.</p>
+        <p class="lead mb-4 text-lead" style="text-align: left;"><span class="desk"><b><i>Sei pronto per l'avventura?</i></b></span></p>
     </div>
+        <div class="container d-flex justify-content-around bg-body">
+            <app-contatore titolo="Clienti" [targetCount]="900"></app-contatore>
+            <app-contatore titolo="Sponsor" [targetCount]="300"></app-contatore>
+        </div>

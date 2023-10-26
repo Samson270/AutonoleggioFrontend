@@ -4,10 +4,24 @@ body {
     align-items: center;
     min-height: 80vh;
     margin: 0;
+    background-image: url('/assets/h.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
 }
 
 .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: auto;
+}
+h1{
+    color: darkgoldenrod;
+    font-family: 'Amsterdam Two';
+    text-shadow:
+    2px 2px 4px #000000,
+    0 0 1em #000000,
+    0 0 0.2em #000000;
 }
