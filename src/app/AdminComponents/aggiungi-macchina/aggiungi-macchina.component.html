@@ -1,0 +1,36 @@
+<body class="d-flex align-items-center py-4 bg-body-tertiary"> 
+    <main class="form-signin w-100 m-auto">
+      <form [formGroup]="autoForm" (ngSubmit)="aggiungiAuto()">
+        <img class="mb-4" src="../../../assets/immaginePrescelta.jpg" alt="" width="72" height="57">
+        <h1 class="h3 mb-3 fw-normal">Aggiungi la tua auto qui</h1>
+    
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="nome" id="floatingInput" placeholder="Nome">
+          <label for="floatingInput">Nome</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="cognome" id="floatingInput" placeholder="Cognome">
+          <label for="floatingInput">Cognome</label>
+        </div>
+        <div class="form-floating">
+          <input type="email" class="form-control" formControlName="username" id="floatingInput" placeholder="nome@esempio.com">
+          <label for="floatingInput">Indirizzo Email</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" formControlName="password" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+        <div class="form-floating">
+          <input type="tel" class="form-control" formControlName="numeroTelefono" id="floatingInput" placeholder="Numero di cellulare">
+          <label for="floatingInput">Numero di Telefono</label>
+        </div>
+        <div class="form-floating">
+          <input type="number" min="0" class="form-control" formControlName="anniPatente" id="floatingInput" placeholder="Nome">
+          <label for="floatingInput">Anni di Patente</label>
+        </div><br><br>
+    
+        <button class="btn btn-warning w-100 py-2" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-body-secondary">© 2017-2023</p>
+      </form>
+    </main>
+    </body>
