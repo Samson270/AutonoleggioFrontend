@@ -9,6 +9,8 @@ import { ContattiComponent } from './Components/contatti/contatti.component';
 import { AdminPageComponent } from './Components/admin-page/admin-page.component';
 import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/aggiungi-macchina.component';
 import { OrdiniComponent } from './AdminComponents/ordini/ordini.component';
+import { DashboardComponent } from './AdminComponents/dashboard/dashboard.component';
+import { UtentiComponent } from './AdminComponents/utenti/utenti.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -17,10 +19,16 @@ const routes: Routes = [
   {path: 'contatti', component: ContattiComponent},
   {path: 'accedi', component: AccediComponent},
   {path: 'registrati', component: RegistratiComponent},
-  {path: 'admin-page', component: AdminPageComponent},
-  {path: 'admin-page/aggiungiMacchina', component: AggiungiMacchinaComponent},
-  {path: 'admin-page/ordini', component: OrdiniComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'}
+  {path: 'admin-page',component: AdminPageComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent},
+      { path: 'utenti', component: UtentiComponent},
+      { path: 'aggiungiMacchina', component: AggiungiMacchinaComponent},
+      { path: 'ordini', component: OrdiniComponent },
+      {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
+    ]
+  },
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
 ];
 
 @NgModule({

@@ -16,6 +16,8 @@ import { CommonModule, DatePipe } from '@angular/common';
 import { AdminPageComponent } from './Components/admin-page/admin-page.component';
 import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/aggiungi-macchina.component';
 import { OrdiniComponent } from './AdminComponents/ordini/ordini.component';
+import { DashboardComponent } from './AdminComponents/dashboard/dashboard.component';
+import { UtentiComponent } from './AdminComponents/utenti/utenti.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { OrdiniComponent } from './AdminComponents/ordini/ordini.component';
     ContatoreComponent,
     AdminPageComponent,
     AggiungiMacchinaComponent,
-    OrdiniComponent
+    OrdiniComponent,
+    DashboardComponent,
+    UtentiComponent
   ],
   imports: [
     BrowserModule,
