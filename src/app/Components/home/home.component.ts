@@ -8,10 +8,16 @@ import { DatePipe } from '@angular/common';
 })
 export class HomeComponent {
   dataOggi:String;
+  dataMinimaRiconsegna:String;
+
   constructor(private data:DatePipe) {
     const dataPartenza = new Date();
     const transformDataOggi = this.data.transform(dataPartenza, 'yyyy-MM-ddTHH:mm');
     this.dataOggi = transformDataOggi;
+    const dataGiornoDopo = new Date(dataPartenza);
+    dataGiornoDopo.setDate(dataPartenza.getDate() + 1);
+    const transformDataGiornoDopo = this.data.transform(dataGiornoDopo, 'yyyy-MM-ddTHH:mm');
+    this.dataMinimaRiconsegna = transformDataGiornoDopo;
   }
 
   controllaData() {

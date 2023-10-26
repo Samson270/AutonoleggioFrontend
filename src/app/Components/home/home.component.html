@@ -4,9 +4,9 @@
     <div class="col-lg-6 mx-auto">
             <form onsubmit="return controllaData()" method="post" class="d-flex gap-4">
                 <label for="dataRitiro"><b>Data di ritiro:</b></label>
-                <input type="datetime-local" id="dataRitiro" name="dataPartenza" [min]="dataOggi" [value]="dataOggi">
+                <input type="datetime-local" id="dataRitiro" name="dataPartenza" [min]="dataOggi" [value]="dataOggi" required>
                 <label for="dataRiconsegna"><b>Data di riconsegna:</b></label>
-                <input type="datetime-local" id="dataRiconsegna" name="dataRitorno">
+                <input type="datetime-local" id="dataRiconsegna" [min]="dataMinimaRiconsegna" name="dataRitorno" required>
             </form>
             <br>
             <div id="errore" style="color: black; display: none;">Non si noleggiano DeLorean DMC-12.</div>
