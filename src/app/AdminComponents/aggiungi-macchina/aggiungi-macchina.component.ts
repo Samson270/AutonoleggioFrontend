@@ -45,7 +45,5 @@ export class AggiungiMacchinaComponent {
         alert("Errore durante l'inserimento");
       }
     });
-    
-    //console.log("./src/assets/" + this.autoForm.get(['imageTitle']).value);
   }
 }
