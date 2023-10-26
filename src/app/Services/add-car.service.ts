@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Macchina } from '../Models/Macchina';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,8 @@ import { Injectable } from '@angular/core';
 export class AddCarService {
 
   constructor() { }
+
+  addCar(car: Macchina){
+    
+  }
 }

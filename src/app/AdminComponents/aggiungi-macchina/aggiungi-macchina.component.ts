@@ -37,7 +37,7 @@ export class AggiungiMacchinaComponent {
       "../../../assets/" + this.autoForm.get('').value,
       this.autoForm.get('descrizione').value,
     );
-    
+    this.addCarService.addCar(this.tmp);
 
     //console.log("./src/assets/" + this.autoForm.get(['imageTitle']).value);
   }
