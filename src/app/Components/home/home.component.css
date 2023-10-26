@@ -25,14 +25,6 @@ body{
     background-attachment: fixed;
     background-color: whitesmoke;
 }
-h1{
-    color: darkgoldenrod;
-    font-family: 'Amsterdam Two';
-    text-shadow:
-    2px 2px 4px #000000,
-    0 0 1em #000000,
-    0 0 0.2em #000000;
-}
 .desk{
     color:#c5a643;
     font-weight: bolder;

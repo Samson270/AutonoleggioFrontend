@@ -5,30 +5,37 @@
         <h1 class="h3 mb-3 fw-normal">Aggiungi la tua auto qui</h1>
     
         <div class="form-floating">
-          <input type="text" class="form-control" formControlName="modello" id="floatingInput" placeholder="modello">
-          <label for="floatingInput">modello</label>
+          <input type="text" class="form-control" formControlName="modello" id="modello" placeholder="modello">
+          <label for="modello">modello</label>
         </div>
         <div class="form-floating">
-          <input type="text" class="form-control" formControlName="targa" id="floatingInput" placeholder="targa">
-          <label for="floatingInput">targa</label>
+          <input type="text" class="form-control" formControlName="targa" id="targa" placeholder="targa">
+          <label for="targa">targa</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" formControlName="cilindrata" id="floatingInput" placeholder="eg. 50/125/250/500">
-          <label for="floatingInput">cilindrata</label>
+          <input type="number" class="form-control" formControlName="cilindrata" id="cilindrata" placeholder="eg. 50/125/250/500">
+          <label for="cilindrata">cilindrata</label>
         </div>
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="marca" id="floatingPassword" placeholder="marca">
           <label for="floatingPassword">Marca</label>
         </div>
         <div class="form-floating">
-          <input type="number" class="form-control" formControlName="prezzoGiornaliero" id="floatingInput" placeholder="Prezzo giornaliero">
-          <label for="floatingInput">Prezzo giornaliero</label>
+          <input type="number" class="form-control" formControlName="prezzoGiornaliero" id="prezzoGiornaliero" placeholder="Prezzo giornaliero">
+          <label for="prezzoGiornaliero">Prezzo giornaliero</label>
         </div>
         <div class="form-floating">
-          <input type="number" min="0" class="form-control" formControlName="anniPatente" id="floatingInput" placeholder="Nome">
-          <label for="floatingInput">Anni di Patente</label>
+          <input type="number" min="0" class="form-control" formControlName="potenza" id="potenza" placeholder="Potenza">
+          <label for="potenza">Potenza</label>
+        </div>
+        <div class="form-floating">
+          <input type="text" class="form-control" formControlName="imageTitle" id="ImageTitle">
+          <label for="ImageTitle">Titolo immagine</label>
+        </div>
+        <div class="form-floating">
+          <textarea id="descrizione" class="form-control" formControlName="descrizione" rows="4" cols="83"></textarea>
+          <label for="descrizione">Descrizione:</label>
         </div><br><br>
-    
         <button class="btn btn-warning w-100 py-2" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-body-secondary">© 2017-2023</p>
       </form>
