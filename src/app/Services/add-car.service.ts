@@ -8,11 +8,17 @@ import { Observable } from 'rxjs';
 })
 export class AddCarService {
 
-  private baseUrl = 'http://localhost:8080/auto/add';
+  private addUrl = 'http://localhost:8080/auto/add';
+
+  private getUrl = 'http://localhost:8080/auto/all';
 
   constructor(private httpClient: HttpClient) { }
 
   addCar(car: Macchina):Observable<string>{
-    return this.httpClient.post(this.baseUrl, car, {responseType: 'text'});
+    return this.httpClient.post(this.addUrl, car, {responseType: 'text'});
+  }
+
+  getAllCars(){
+    return this.httpClient.get(this.getUrl, {responseType: 'json'});
   }
 }

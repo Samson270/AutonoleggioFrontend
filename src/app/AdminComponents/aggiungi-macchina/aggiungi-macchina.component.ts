@@ -34,7 +34,7 @@ export class AggiungiMacchinaComponent {
       this.autoForm.get('marca').value,
       this.autoForm.get('prezzoGiornaliero').value,
       this.autoForm.get('potenza').value,
-      "/src/assets/" + this.autoForm.get('imageTitle').value + ".jpg",
+      "assets/" + this.autoForm.get('imageTitle').value + ".jpg",
       this.autoForm.get('descrizione').value,
     );
     this.addCarService.addCar(this.tmp).subscribe((res: string) =>{
