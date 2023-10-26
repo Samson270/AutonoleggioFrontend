@@ -34,7 +34,7 @@ export class AccediComponent {
       }else if(res.message == "Login Succes"){
         if(this.credentials.username == "admin@gmail.com" && this.credentials.password == "Password123"){
           this.loginService.setLoggato(res.name, true);
-        this.router.navigateByUrl("/admin-page");
+           this.router.navigateByUrl("/admin-page");
         } else {
             this.loginService.setLoggato(res.name, false);
             this.router.navigateByUrl("/home");

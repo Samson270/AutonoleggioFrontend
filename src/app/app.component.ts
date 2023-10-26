@@ -10,11 +10,14 @@ import { LoginService } from './Services/login.service';
 })
 export class AppComponent {
 
+  title = "progettoAutonoleggio";
+
   loggato: boolean;
   isAdmin: boolean;
   nome: string;
 
   ngOnInit(){
+    this.isAdmin = false;
     this.loginService.loggato$.subscribe((loggato) => {
       this.loggato = loggato;
       if (loggato) {
@@ -22,7 +25,6 @@ export class AppComponent {
         this.isAdmin = this.loginService.isAdmin;
       } else {
         this.nome = null;
-        this.isAdmin = false;
       }
     });
   }

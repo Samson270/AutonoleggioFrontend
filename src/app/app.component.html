@@ -1,34 +1,30 @@
-<header class="p-3 text-bg-dark">
-  <div class="container">
-    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-      <a routerLink="home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-        <img src="./assets/PPW.png" width="200px" height="60px" style="object-fit:contain;" />
-      </a>
-      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li style="text-align: center;"><a routerLink="home" [class.link-secondary]="isLinkActive('/home')"
-            [class.text-white]="!isLinkActive('/home')" class="nav-link px-2">Home</a></li>
-        <li><a routerLink="catalogo" [class.link-secondary]="isLinkActive('/catalogo')"
-            [class.text-white]="!isLinkActive('/catalogo')" class="nav-link px-2">Catalogo</a></li>
-        <li><a routerLink="faqs" [class.link-secondary]="isLinkActive('/faqs')" [class.text-white]="!isLinkActive('/faqs')"
-            class="nav-link px-2">FAQs</a></li>
-        <li><a routerLink="contatti" [class.link-secondary]="isLinkActive('/contatti')"
-            [class.text-white]="!isLinkActive('/contatti')" class="nav-link px-2">Contatti</a></li>
-      </ul>
-      <div class="text-end" *ngIf="!loggato">
-        <a routerLink="accedi" type="button" class="btn btn-outline-light me-2">Accedi</a>
-        <a routerLink="registrati" type="button" class="btn btn-warning">Registrati</a>
+<body *ngIf="!isAdmin">
+  <header class="p-3 text-bg-dark">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a routerLink="home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img src="./assets/PPW.png" width="200px" height="60px" style="object-fit:contain;" />
+        </a>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li style="text-align: center;"><a routerLink="home" [class.link-secondary]="isLinkActive('/home')"
+              [class.text-white]="!isLinkActive('/home')" class="nav-link px-2">Home</a></li>
+          <li><a routerLink="catalogo" [class.link-secondary]="isLinkActive('/catalogo')"
+              [class.text-white]="!isLinkActive('/catalogo')" class="nav-link px-2">Catalogo</a></li>
+          <li><a routerLink="faqs" [class.link-secondary]="isLinkActive('/faqs')" [class.text-white]="!isLinkActive('/faqs')"
+              class="nav-link px-2">FAQs</a></li>
+          <li><a routerLink="contatti" [class.link-secondary]="isLinkActive('/contatti')"
+              [class.text-white]="!isLinkActive('/contatti')" class="nav-link px-2">Contatti</a></li>
+        </ul>
+        <div class="text-end" *ngIf="!loggato">
+          <a routerLink="accedi" type="button" class="btn btn-outline-light me-2">Accedi</a>
+          <a routerLink="registrati" type="button" class="btn btn-warning">Registrati</a>
+        </div>      
+        <div class="text-end" *ngIf="loggato && !isAdmin">
+          <p><b>Benvenuto {{nome}}</b>&nbsp;<button class="btn btn-warning" (click)="logout()">Logout</button></p>
+        </div>
       </div>
-      <div class="text-end" *ngIf="loggato && !isAdmin">
-        <p><b>Benvenuto {{nome}}</b>&nbsp;<button class="btn btn-warning" (click)="logout()">Logout</button></p>
-      </div>
-      <div class="text-end" *ngIf="loggato && isAdmin">
-        <p><b>Benvenuto Admin {{nome}}</b>&nbsp;
-        <button class="btn btn-warning" (click)="logout()">Logout</button></p>
-      </div>
-
     </div>
-  </div>
-</header>
-
+  </header>
+</body>
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+<app-footer *ngIf="!isAdmin"></app-footer>
