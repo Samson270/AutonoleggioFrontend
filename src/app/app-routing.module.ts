@@ -7,6 +7,7 @@ import { CatalogoComponent } from './Components/catalogo/catalogo.component';
 import { FaqsComponent } from './Components/faqs/faqs.component';
 import { ContattiComponent } from './Components/contatti/contatti.component';
 import { AdminPageComponent } from './Components/admin-page/admin-page.component';
+import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/aggiungi-macchina.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'accedi', component: AccediComponent},
   {path: 'registrati', component: RegistratiComponent},
   {path: 'admin-page', component: AdminPageComponent},
+  {path: 'admin-page/aggiungiMacchina', component: AggiungiMacchinaComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'}
 ];
 
