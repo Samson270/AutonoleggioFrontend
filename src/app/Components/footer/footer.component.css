@@ -1,0 +1,17 @@
+body{
+    background-image: url('/assets/f.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+}
+.descrizione {
+    font-family: 'Amsterdam Two';
+    color:#ffffff;
+    font-weight: bolder;
+    text-shadow:
+    2px 2px 4px #ffffff,
+    0 0 1em #ffffff,
+    0 0 0.2em #ffffff;
+}
