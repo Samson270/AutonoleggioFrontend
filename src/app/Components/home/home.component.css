@@ -30,3 +30,19 @@ body{
     font-weight: bolder;
     font-family: 'Lemon Tuesday';
 }
+h1{
+    color: darkgoldenrod;
+    font-family: 'Amsterdam Two';
+    text-shadow:
+    2px 2px 4px #000000,
+    0 0 1em #000000,
+    0 0 0.2em #000000;
+}
+.descrizione{
+    color:#d9d9d9;
+    font-weight: bolder;
+    text-shadow:
+    2px 2px 4px #2c424d,
+    0 0 1em #2c424d,
+    0 0 0.2em #2c424d;
+}
