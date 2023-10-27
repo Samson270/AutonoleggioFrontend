@@ -26,17 +26,16 @@ export class AccediComponent {
       this.credentialsForm.get('username').value,
       this.credentialsForm.get('password').value,
     );
-    console.log(this.credentials);
     this.loginService.loginUser(this.credentials).subscribe((res: any) =>{
       console.log(res);
       if(res.message == "Email Not Exist"){
         alert("Email Not Exist");
       }else if(res.message == "Login Succes"){
         if(this.credentials.username == "admin@gmail.com" && this.credentials.password == "Password123"){
-          this.loginService.setLoggato(res.name, true);
+          this.loginService.setLoggato(res.name, res.cognome, res.username, true);
            this.router.navigateByUrl("/admin-page");
         } else {
-            this.loginService.setLoggato(res.name, false);
+            this.loginService.setLoggato(res.name, res.cognome, res.username,  false);
             this.router.navigateByUrl("/home");
         }
       }else{

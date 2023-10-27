@@ -1,5 +1,3 @@
-import { animate } from "@angular/animations";
-
 export class Utente{
     nome: string;
     cognome: string;

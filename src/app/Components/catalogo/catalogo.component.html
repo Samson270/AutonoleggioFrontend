@@ -17,8 +17,8 @@
             <div class="col" *ngFor="let macchina of macchine;let index = index">
                 <div class="card shadow-sm">
                     <img src="{{macchina.imageUrl}}">
-                    <div class="card-body" style="background-color: #f3f2e4;">
-                        <h5><b>{{macchina.marca}}&nbsp;{{macchina.modello}}</b></h5> 
+                    <div class="card-body">
+                        <h5>{{macchina.marca}}&nbsp;{{macchina.modello}}</h5> 
                         <p class="card-text">{{macchina.descrizione}}</p>
                         <div class="d-flex justify-content-end align-items-center">
                             <div class="d-flex gap-2">
@@ -26,7 +26,10 @@
                                 [attr.data-bs-target]="'#view-information' + index">
                                     Visualizza Informazioni
                                 </button>
-                                <button type="button" class="btn btn-sm btn-success pre">Prenota</button>
+                                <button type="button" class="btn btn-sm btn-success pre" data-bs-toggle="modal"
+                                [attr.data-bs-target]="'#prenotazione' + index">
+                                    Prenota
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -62,6 +65,35 @@
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary vis" data-bs-dismiss="modal">Chiudi</button>
                                 <button type="button" class="btn btn-primary pre">Prenota subito!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" [id]="'prenotazione' + index" tabindex="-1" aria-labelledby="prenotazione" aria-hidden="true">
+                    <div class="modal-dialog ">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <p class="modal-title fs-5" id="#prenotazione">Prenota subito</p>
+                            </div>
+                            <div class="modal-body" *ngIf="!loggato">
+                                <div class="alert alert-danger" role="alert">
+                                    Per effettuare la prenotazione devi essere loggato!
+                                  </div>
+                             </div>
+                            <div class="modal-body" *ngIf="loggato">
+                                <div class="modal-body" *ngIf="loggato">
+                                    <form [formGroup]="periodoNoleggio">
+                                     <p>Inserisci Data di ritiro e Data di riconsegna(periodo minimo 3 giorni)</p>
+                                     <label for="dataInizio"></label>
+                                     <input type="date" name="dataInizio" id="dataInizio" [min]="minDate" formControlName="dataInizio" (change)="cambiaRet()" required>
+                                     <label for="dataFine"></label>
+                                     <input type="date" name="dataFine" id="dataFine" [min]="retDate" formControlName="dataFine" required>
+                                    </form>
+                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary vis" data-bs-dismiss="modal">Chiudi</button>
+                                <button type="button" class="btn btn-primary pre" [disabled]="!loggato" (click)="controllaData(macchina.targa)">Prenota subito!</button>
                             </div>
                         </div>
                     </div>
