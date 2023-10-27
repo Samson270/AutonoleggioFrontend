@@ -1,6 +1,6 @@
+import { PeriodoNoleggio } from 'src/app/Models/PeriodoNoleggio';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { PeriodoNoleggio } from '../Models/PeriodoNoleggio';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +13,9 @@ export class BookingService {
 
   controllaDisponibilita(periodoNoleggio: PeriodoNoleggio){
     return this.httpClient.post(this.dispUrl, periodoNoleggio, {responseType: "text"})
+  }
+
+  aggiungiPrenotazione(nome: string, cognome: string, username: string, targa: string,periodoNoleggio :PeriodoNoleggio){
+
   }
 }

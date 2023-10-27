@@ -48,11 +48,21 @@ export class CatalogoComponent {
       this.retDate = ''; // Imposta retDate su vuoto se dataInizio non è impostato
     }
   }
-  controllaData(){
+  controllaData(targa: string){
     let tmp1 = new Date(this.periodoNoleggio.get('dataInizio').value);
     let tmp2 = new Date(this.periodoNoleggio.get('dataFine').value);
     let tmp = new PeriodoNoleggio(tmp1, tmp2);
-    this.bookingService.controllaDisponibilita(tmp);
+    console.log(targa);
+    console.log(tmp);
+    /*this.bookingService.controllaDisponibilita(tmp).subscribe((res: string) => {
+      if(res == "non disponibile"){
+
+      } else if(res == "disponibile"){
+        //this.bookingService.aggiungiPrenotazione(this.loginService.nome, this.loginService.cognome, this.loginService.username, null,tmp)
+      } else {
+        alert("qualcosa è andato storto");
+      }
+    });*/
   }
   
 }
