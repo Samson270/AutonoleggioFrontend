@@ -9,13 +9,11 @@ import { AddCarService } from 'src/app/Services/add-car.service';
 })
 export class CatalogoComponent {
   macchine: Macchina[];
-
   constructor(private addCarService: AddCarService){}
   
   ngOnInit(){
     this.addCarService.getAllCars().subscribe((res: Macchina[]) =>{
       this.macchine = res;
-
     });
   }
 }
