@@ -1,14 +1,14 @@
 export class PrenotazioneDTO{
-    nomeCliente: string;
-    cognomeCliente: string;
+    nome: string;
+    cognome: string;
     username: string;
     targa: string;
     dataRitiro: Date;
     dataRitorno: Date;
 
-    constructor(nomeCliente: string, cognomeCliente: string, username: string, targa: string, dataRitiro: Date, dataRitorno: Date){
-        this.nomeCliente = nomeCliente,
-        this.cognomeCliente = cognomeCliente;
+    constructor(nome: string, cognome: string, username: string, targa: string, dataRitiro: Date, dataRitorno: Date){
+        this.nome = nome,
+        this.cognome = cognome;
         this.username = username;
         this.targa = targa;
         this.dataRitiro = dataRitiro;
