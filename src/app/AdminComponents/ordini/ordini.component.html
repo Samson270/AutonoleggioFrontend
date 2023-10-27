@@ -5,22 +5,22 @@
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col" style="color: #c5a643;">#</th>
               <th scope="col" style="color: #c5a643;">Cognome</th>
               <th scope="col" style="color: #c5a643;">Nome</th>
-              <th scope="col" style="color: #c5a643;">Telefono</th>
-              <th scope="col" style="color: #c5a643;">Anni Patente</th>
-              <th scope="col" style="color: #c5a643;">Macchina Ordinata</th>
+              <th scope="col" style="color: #c5a643;">Username</th>
+              <th scope="col" style="color: #c5a643;">Targa</th>
+              <th scope="col" style="color: #c5a643;">Data Ritiro</th>
+              <th scope="col" style="color: #c5a643;">Data Ritorno</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody *ngFor="let ordine of ordini">
             <tr>
-              <td>1</td>
-              <td>Manfredi</td>
-              <td>Octolin</td>
-              <td>3451093575</td>
-              <td>6</td>
-              <td>Ferrari Huracàn</td>
+              <td>{{ordine.cognomeCliente}}</td>
+              <td>{{ordine.nomeCliente}}</td>
+              <td>{{ordine.username}}</td>
+              <td>{{ordine.targa}}</td>
+              <td>{{ordine.dataRitiro}}</td>
+              <td>{{ordine.dataRitorno}}</td>
               <td><button type="button" class="btn btn-sm btn-outline-danger">Elimina</button></td>
             </tr>
           </tbody>
