@@ -18,6 +18,7 @@ import { AggiungiMacchinaComponent } from './AdminComponents/aggiungi-macchina/a
 import { OrdiniComponent } from './AdminComponents/ordini/ordini.component';
 import { DashboardComponent } from './AdminComponents/dashboard/dashboard.component';
 import { UtentiComponent } from './AdminComponents/utenti/utenti.component';
+import { PrenotazioneComponent } from './Components/prenotazione/prenotazione.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { UtentiComponent } from './AdminComponents/utenti/utenti.component';
     AggiungiMacchinaComponent,
     OrdiniComponent,
     DashboardComponent,
-    UtentiComponent
+    UtentiComponent,
+    PrenotazioneComponent
   ],
   imports: [
     BrowserModule,
