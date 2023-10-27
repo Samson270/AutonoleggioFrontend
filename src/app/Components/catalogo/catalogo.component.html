@@ -14,13 +14,12 @@
                 placeholder="Cerca per modello..." aria-label="Search">
         </form>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 mt-3">
-            <div class="col">
+            <div class="col" *ngFor="let macchina of macchine">
                 <div class="card shadow-sm">
-                    <img src="assets/lamborghini-huracan.jpg" alt="Lamborghini Huracan">
+                    <img src="{{macchina.imageUrl}}">
                     <div class="card-body">
-                        <h5>Lamborghini Huracan</h5>
-                        <p class="card-text">La sua elegante e aggressiva estetica è abbinata a prestazioni straordinarie, rendendola una delle vetture più desiderate nel mondo delle auto sportive di fascia alta. 
-                            <br>La Huracan è dotata di un motore V10 che eroga una potenza impressionante, garantendo accelerazioni fulminee e una velocità massima eccezionale. L'interno è lussuoso e offre una serie di comfort e tecnologie all'avanguardia, pur mantenendo l'aspetto focoso e sportivo tipico di Lamborghini.</p>
+                        <h5>{{macchina.marca}}&nbsp;{{macchina.modello}}</h5> 
+                        <p class="card-text">{{macchina.descrizione}}</p>
                         <div class="d-flex justify-content-end align-items-center">
                             <div class="d-flex gap-2">
                                 <button type="button" class="btn btn-sm btn-primary vis" data-bs-toggle="modal"
@@ -36,34 +35,34 @@
         </div>
     </div>
 </div>
-<!-- Modal -->
+<!-- Modal
 <div class="modal fade" id="view-information" tabindex="-1" aria-labelledby="viewInformationLabel" aria-hidden="true">
     <div class="modal-dialog ">
         <div class="modal-content">
             <div class="modal-header">
-                <p class="modal-title fs-5" id="#viewInformationLabel">Lamborghini Huracan</p>
+                <p class="modal-title fs-5" id="#viewInformationLabel">{{macchina.marca}}&nbsp;{{macchina.modello}}</p>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <img src="assets/lamborghini-huracan.jpg" width="100%" height="200px" alt="Lamborghini Huracan">
+                <img src="{{macchina.imageUrl}}" width="100%" height="200px">
                 <h2 class="my-3">Dettagli Tecnici</h2>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Marca: </span>{{ marca }}</p>
+                    <p><span class="fw-bolder">Marca: </span>{{ macchina.marca }}</p>
                 </section>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Modello: </span>{{ modello }}</p>
+                    <p><span class="fw-bolder">Modello: </span>{{ macchina.modello }}</p>
                 </section>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Targa: </span>{{ targa }}</p>
+                    <p><span class="fw-bolder">Targa: </span>{{ macchina.targa }}</p>
                 </section>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Cilindrata: </span>{{ cilindrata }}</p>
+                    <p><span class="fw-bolder">Cilindrata: </span>{{ macchina.cilindrata }}</p>
                 </section>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Prezzo Giornaliero: </span>{{ prezzo }} €</p>
+                    <p><span class="fw-bolder">Prezzo Giornaliero: </span>{{ macchina.prezzoGiornaliero }} €</p>
                 </section>
                 <section class="d-flex align-items-center">
-                    <p><span class="fw-bolder">Potenza: </span>{{ potenza }}</p>
+                    <p><span class="fw-bolder">Potenza: </span>{{ macchina.potenza }}</p>
                 </section>
             </div>
             <div class="modal-footer">
@@ -72,4 +71,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

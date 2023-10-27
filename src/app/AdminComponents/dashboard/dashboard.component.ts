@@ -8,11 +8,16 @@ import { DashboardService } from 'src/app/AdminServices/dashboard.service';
 })
 export class DashboardComponent implements OnInit{
   utentiTotali:number;
+  statoServer:string;
   constructor(private dashboardService: DashboardService){}
 
   ngOnInit(): void {
     this.dashboardService.getUtentiTotali().subscribe(count => {
       this.utentiTotali = count;
     });
+
+    this.dashboardService.getServerStatus().subscribe(count => {
+      this.statoServer = count;
+      });
   }
 }

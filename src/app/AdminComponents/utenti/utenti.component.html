@@ -1,28 +1,26 @@
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Utenti</h1>
-</div>
-      <div class="table-responsive small">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Cognome</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Username</th>
-              <th scope="col">Telefono</th>
-              <th scope="col">Anni Patente</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Rossi</td>
-              <td>Mario</td>
-              <td>mario@gmail.com</td>
-              <td>3451093999</td>
-              <td>6</td>
-              <td><button type="button" class="btn btn-sm btn-outline-danger">Elimina</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Utenti</h1>
+    </div>
+          <div class="table-responsive small">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">Cognome</th>
+                  <th scope="col">Nome</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Telefono</th>
+                  <th scope="col">Anni Patente</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let utente of utenti">
+                <tr>
+                  <td>{{ utente.cognome }}</td>
+                  <td>{{ utente.nome }}</td>
+                  <td>{{ utente.username }}</td>
+                  <td>{{ utente.numeroTelefono }}</td>
+                  <td>{{ utente.anniPatente }}</td>
+                  <td><button type="button" class="btn btn-sm btn-outline-danger">Elimina</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>

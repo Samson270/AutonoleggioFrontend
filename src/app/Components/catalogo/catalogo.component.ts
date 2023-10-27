@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Macchina } from 'src/app/Models/Macchina';
+import { AddCarService } from 'src/app/Services/add-car.service';
 
 @Component({
   selector: 'app-catalogo',
@@ -6,20 +8,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./catalogo.component.css']
 })
 export class CatalogoComponent {
-  marca:String;
-  modello:String;
-  targa:String;
-  cilindrata:String;
-  prezzo:String;
-  potenza:String;
+  macchine: Macchina[];
 
-  constructor()
-  {
-    this.marca = "Lamborghini";
-    this.modello = "Huracàn";
-    this.targa = "CF394VZ";
-    this.cilindrata = "5,2 l";
-    this.prezzo = "195.000";
-    this.potenza = "640";
+  constructor(private addCarService: AddCarService){}
+  
+  ngOnInit(){
+    this.addCarService.getAllCars().subscribe((res: Macchina[]) =>{
+      this.macchine = res;
+
+    });
   }
 }
