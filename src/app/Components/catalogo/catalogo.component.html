@@ -27,7 +27,7 @@
                                     Visualizza Informazioni
                                 </button>
                                 <button type="button" class="btn btn-sm btn-success pre" data-bs-toggle="modal"
-                                data-bs-target="#test">
+                                [attr.data-bs-target]="'#prenotazione' + index">
                                     Prenota
                                 </button>
                             </div>
@@ -69,11 +69,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="modal fade" id="test" tabindex="-1" aria-labelledby="test" aria-hidden="true">
+                <div class="modal fade" [id]="'prenotazione' + index" tabindex="-1" aria-labelledby="prenotazione" aria-hidden="true">
                     <div class="modal-dialog ">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <p class="modal-title fs-5" id="#test">Prenota subito</p>
+                                <p class="modal-title fs-5" id="#prenotazione">Prenota subito</p>
                             </div>
                             <div class="modal-body" *ngIf="!loggato">
                                 <div class="alert alert-danger" role="alert">
