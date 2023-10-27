@@ -2,41 +2,41 @@
     <main class="form-signin w-100 m-auto">
       <form [formGroup]="autoForm" (ngSubmit)="aggiungiAuto()">
         <img class="mb-4" src="../../../assets/immaginePrescelta.jpg" alt="" width="72" height="57">
-        <h1 class="h3 mb-3 fw-normal">Aggiungi la tua auto qui</h1>
+        <h1 class="h3 mb-3 fw-normal" style="font-family: Amsterdam Two;">Aggiungi la tua auto qui</h1>
     
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="modello" id="modello" placeholder="modello">
-          <label for="modello">modello</label>
-        </div>
+          <label for="modello">Modello</label>
+        </div><br>
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="targa" id="targa" placeholder="targa">
-          <label for="targa">targa</label>
-        </div>
+          <label for="targa">Targa</label>
+        </div><br>
         <div class="form-floating">
           <input type="number" class="form-control" formControlName="cilindrata" id="cilindrata" placeholder="eg. 50/125/250/500">
-          <label for="cilindrata">cilindrata</label>
-        </div>
+          <label for="cilindrata">Cilindrata</label>
+        </div><br>
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="marca" id="floatingPassword" placeholder="marca">
           <label for="floatingPassword">Marca</label>
-        </div>
+        </div><br>
         <div class="form-floating">
           <input type="number" class="form-control" formControlName="prezzoGiornaliero" id="prezzoGiornaliero" placeholder="Prezzo giornaliero">
           <label for="prezzoGiornaliero">Prezzo giornaliero</label>
-        </div>
+        </div><br>
         <div class="form-floating">
           <input type="number" min="0" class="form-control" formControlName="potenza" id="potenza" placeholder="Potenza">
           <label for="potenza">Potenza</label>
-        </div>
+        </div><br>
         <div class="form-floating">
           <input type="text" class="form-control" formControlName="imageTitle" id="ImageTitle">
           <label for="ImageTitle">Titolo immagine</label>
-        </div>
+        </div><br>
         <div class="form-floating">
           <textarea id="descrizione" class="form-control" formControlName="descrizione" rows="4" cols="83" maxlength="500"></textarea>
           <label for="descrizione">Descrizione:</label>
-        </div><br><br>
-        <button class="btn btn-warning w-100 py-2" type="submit">Sign in</button>
+        </div><br>
+        <button class="btn btn-warning py-2" type="submit" style="background-color: goldenrod; color: white;">Sign in</button>
         <p class="mt-5 mb-3 text-body-secondary">© 2017-2023</p>
       </form>
     </main>

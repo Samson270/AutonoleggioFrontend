@@ -41,3 +41,11 @@
   .navbar .form-control {
     padding: .75rem 1rem;
   }
+  .dec{
+    background-image: url('/assets/a.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: whitesmoke;
+  }

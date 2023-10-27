@@ -17,8 +17,8 @@
             <div class="col" *ngFor="let macchina of macchine;let index = index">
                 <div class="card shadow-sm">
                     <img src="{{macchina.imageUrl}}">
-                    <div class="card-body">
-                        <h5>{{macchina.marca}}&nbsp;{{macchina.modello}}</h5> 
+                    <div class="card-body" style="background-color: #f3f2e4;">
+                        <h5><b>{{macchina.marca}}&nbsp;{{macchina.modello}}</b></h5> 
                         <p class="card-text">{{macchina.descrizione}}</p>
                         <div class="d-flex justify-content-end align-items-center">
                             <div class="d-flex gap-2">
