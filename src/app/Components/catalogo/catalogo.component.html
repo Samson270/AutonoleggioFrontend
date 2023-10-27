@@ -17,8 +17,8 @@
             <div class="col" *ngFor="let macchina of macchine;let index = index">
                 <div class="card shadow-sm">
                     <img src="{{macchina.imageUrl}}">
-                    <div class="card-body" style="background-color: #f3f2e4;">
-                        <h5><b>{{macchina.marca}}&nbsp;{{macchina.modello}}</b></h5> 
+                    <div class="card-body">
+                        <h5>{{macchina.marca}}&nbsp;{{macchina.modello}}</h5> 
                         <p class="card-text">{{macchina.descrizione}}</p>
                         <div class="d-flex justify-content-end align-items-center">
                             <div class="d-flex gap-2">
@@ -81,15 +81,7 @@
                                   </div>
                              </div>
                             <div class="modal-body" *ngIf="loggato">
-                                <div class="modal-body" *ngIf="loggato">
-                                    <form [formGroup]="periodoNoleggio" (ngSubmit)="controllaData()">
-                                     <p>Inserisci Data di ritiro e Data di riconsegna(periodo minimo 3 giorni)</p>
-                                     <label for="dataInizio"></label>
-                                     <input type="date" name="dataInizio" id="dataInizio" [min]="minDate" formControlName="dataInizio" (change)="cambiaRet()" required>
-                                     <label for="dataFine"></label>
-                                     <input type="date" name="dataFine" id="dataFine" [min]="retDate" formControlName="dataFine" required>
-                                    </form>
-                                 </div>
+                               <p>SEI LOGGATO</p>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary vis" data-bs-dismiss="modal">Chiudi</button>
