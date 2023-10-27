@@ -58,21 +58,20 @@ export class CatalogoComponent {
    controllaData(targa: string){
     let tmp1 = new Date(this.periodoNoleggio.get('dataInizio').value);
     let tmp2 = new Date(this.periodoNoleggio.get('dataFine').value);
-    let tmp = new PeriodoNoleggio(tmp1, tmp2);
-    console.log(targa);
+    let tmp = new PeriodoNoleggio(tmp1, tmp2, targa);
     console.log(tmp);
     this.bookingService.controllaDisponibilita(tmp).subscribe((res: string) => {
       if(res == "non disponibile"){
         console.log("Data immessa non disponibile");
       } else if(res == "disponibile"){
-        this.aggiungiPrenotazione(targa, tmp);
+        this.aggiungiPrenotazione(tmp);
       } else {
         alert("qualcosa è andato storto");
       }
     });
    }
-    aggiungiPrenotazione(targa: string, tmp: PeriodoNoleggio) {
-      const prenotazione = new PrenotazioneDTO(this.loginService.nome, this.loginService.cognome, this.loginService.username, targa, tmp.dataRitiro, tmp.dataRitorno);
+    aggiungiPrenotazione(tmp: PeriodoNoleggio) {
+      const prenotazione = new PrenotazioneDTO(this.loginService.nome, this.loginService.cognome, this.loginService.username, tmp.targa, tmp.dataRitiro, tmp.dataRitorno);
       console.log(prenotazione);
     
       this.bookingService.aggiungiPrenotazione(prenotazione).subscribe((data: any) => {
