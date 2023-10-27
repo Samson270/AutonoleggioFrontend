@@ -5,6 +5,10 @@ import { PeriodoNoleggio } from 'src/app/Models/PeriodoNoleggio';
 import { AddCarService } from 'src/app/Services/add-car.service';
 import { BookingService } from 'src/app/Services/booking.service';
 import { LoginService } from 'src/app/Services/login.service';
+import { PrenotazioneDTO } from 'src/app/Models/PrenotazioneDTO';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-catalogo',
@@ -18,7 +22,7 @@ export class CatalogoComponent {
   retDate: string;
 
 
-  constructor(private addCarService: AddCarService, private loginService:LoginService, private bookingService: BookingService){
+  constructor(private addCarService: AddCarService, private loginService:LoginService, private bookingService: BookingService, private router: Router){
     const today = new Date(); 
     this.minDate = today.toISOString().split('T')[0];
   }
@@ -54,15 +58,23 @@ export class CatalogoComponent {
     let tmp = new PeriodoNoleggio(tmp1, tmp2);
     console.log(targa);
     console.log(tmp);
-    /*this.bookingService.controllaDisponibilita(tmp).subscribe((res: string) => {
+    this.bookingService.controllaDisponibilita(tmp).subscribe((res: string) => {
       if(res == "non disponibile"){
-
+        console.log("Data immessa non disponibile");
       } else if(res == "disponibile"){
-        //this.bookingService.aggiungiPrenotazione(this.loginService.nome, this.loginService.cognome, this.loginService.username, null,tmp)
+        let prenotazione = new PrenotazioneDTO(this.loginService.nome, this.loginService.cognome, this.loginService.username, targa, tmp.dataRitiro, tmp.dataRitorno);
+        console.log(prenotazione);
+        this.bookingService.aggiungiPrenotazione(prenotazione).subscribe((data: any) =>{
+          if(data.message == "Prenotazione avvenuta con successo"){
+            console.log(data);
+            this.router.navigateByUrl("/home");
+            alert("il suo ID prenotazione è " + data.id);
+          }
+        })
       } else {
         alert("qualcosa è andato storto");
       }
-    });*/
+    });
   }
   
 }
